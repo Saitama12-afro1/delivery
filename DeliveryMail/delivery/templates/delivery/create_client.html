@@ -1,0 +1,13 @@
+{% extends 'delivery/base.html' %}
+
+{% block title%}
+
+{% endblock %}
+
+{% block body%}
+<a href = "/">Назад</a>
+<form method  = "POST">
+    {% csrf_token %}
+    {{create_client_form.as_p}}
+    <input type = "submit" value = "Создать клиента">
+{% endblock %}

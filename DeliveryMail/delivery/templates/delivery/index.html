@@ -1,0 +1,18 @@
+{% extends 'delivery/base.html' %}
+
+{% block title%}
+
+{% endblock %}
+
+{% block body%}
+<a href = "create_client"> Создать клиента</a><br>
+<a href = "create_delivery"> Создать рассылку</a><br>
+<a href = "check_clients"> Посмотреть информацию всех клиентов</a><br>
+
+{% for delivery in  deliveries%}
+Сообщение : {{delivery.mes}} дата начала рассылки :{{delivery.date_start_sending}} дата окончания расслыки : {{delivery.date_end_sending}}
+Фильтруют по {{delivery.filter_type}} : {{delivery.value_filter}}
+<a href ='update_delivery/{{delivery.id}}'>Update</a> 
+<a href ='delete_delivery/{{delivery.id}}'>Delete</a><br>
+{% endfor %}
+{% endblock %}

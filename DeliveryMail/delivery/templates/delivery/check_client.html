@@ -1,0 +1,17 @@
+{% extends 'delivery/base.html' %}
+
+{% block title%}
+check_client
+{% endblock %}
+
+{% block body%}
+<a href = "/"> Назад</a>
+<a href = "/create_client"> Создать клиента</a><br>
+<br>
+{%for client in clients%}
+     номер телефона : {{client.number_client}} код мобильного оператора : {{client.mobile_operator_cod}} 
+     таймзона : {{client.timezone}} тэг : {{client.tag.tag}}  
+     <a href ='update_client/{{client.id}}'>Update</a> 
+     <a href ='delete_client/{{client.id}}'>Delete</a><br>
+{% endfor %}
+{% endblock %}
